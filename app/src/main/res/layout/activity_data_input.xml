@@ -12,8 +12,19 @@
 
     <!-- 返回菜单按钮 -->
 
+    <ImageButton
+        android:id="@+id/backtomenu2"
+        android:layout_width="120dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="236dp"
+        android:layout_marginBottom="48dp"
+        android:background="@drawable/back"
+        android:contentDescription="返回"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <Spinner
-        android:id="@+id/spinnerData"
+        android:id="@+id/spinnerData1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
@@ -24,14 +35,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/parsedDataText"
+        android:id="@+id/parsedDataText1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="184dp"
         android:layout_marginTop="48dp"
         android:text="解析后的播种数据"
         android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@+id/spinnerData"
+        app:layout_constraintStart_toEndOf="@+id/spinnerData1"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner

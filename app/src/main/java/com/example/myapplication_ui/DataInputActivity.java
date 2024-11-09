@@ -17,7 +17,7 @@ import com.example.myapplication_ui.Menu.Machine_watch.MainActivity_Machine_watc
 
 public class DataInputActivity extends AppCompatActivity {
 
-    private ImageButton backtomenu;
+    private ImageButton backtomenu,backtomenu2;
 
     private Spinner spinnerData;
     private TextView parsedDataText;  // 用于显示解析的播种数据
@@ -34,8 +34,8 @@ public class DataInputActivity extends AppCompatActivity {
         setContentView(R.layout.activity_data_input);
 
         // 获取第一个 Spinner 和 TextView
-        spinnerData = findViewById(R.id.spinnerData);
-        parsedDataText = findViewById(R.id.parsedDataText);
+        spinnerData = findViewById(R.id.spinnerData1);
+        parsedDataText = findViewById(R.id.parsedDataText1);
 
         // 获取第二个 Spinner 和 TextView
         spinnerData2 = findViewById(R.id.spinnerData2);
@@ -77,7 +77,7 @@ public class DataInputActivity extends AppCompatActivity {
                         "重播率: " + parsedData.reSowingRate + "  " +
                         "漏播率: " + parsedData.missSowingRate + "  " +
                         "变差率: " + parsedData.deviationRate + "  " +
-                        "电流: " + parsedData.current + "  " +
+                        "电流: " + parsedData.seed_current + "  " +
                         "光强: " + parsedData.lightIntensity;
 
                 // 设置第一个 TextView 内容
@@ -111,7 +111,7 @@ public class DataInputActivity extends AppCompatActivity {
                         "状态: " + parsedData2.status + "  " +
                         "转速: " + parsedData2.rotationRate + "  " +
                         "电压: " + parsedData2.voltage + "\n" +
-                        "电流: " + parsedData2.current + " "+
+                        "电流: " + parsedData2.motor_current + " "+
                         "温度: " + parsedData2.temperature + "  " +
                         "圈数: " + parsedData2.circleNum + "  " +
                         "电机状态: " + parsedData2.motorStatus + "  ";
@@ -132,17 +132,7 @@ public class DataInputActivity extends AppCompatActivity {
         backtomenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // 创建 Intent 并传递数据
-                Intent intent2 = new Intent(DataInputActivity.this, MainActivity_Machine_watch.class);
-                intent2.putExtra("name", parsedData2.name);
-                intent2.putExtra("status", parsedData2.status);
-                intent2.putExtra("rotationRate", parsedData2.rotationRate);
-                intent2.putExtra("voltage", parsedData2.voltage);
-                intent2.putExtra("temperature", parsedData2.temperature);
-                intent2.putExtra("circleNum", parsedData2.circleNum);
-                intent2.putExtra("motorStatus", parsedData2.motorStatus);
-                intent2.putExtra("current", parsedData2.current);
-
+                // 创建第二个 Intent，用于传递播种数据并跳转到 MainActivity_seed_watch
                 Intent intent = new Intent(DataInputActivity.this, MainActivity_seed_watch.class);
                 intent.putExtra("name", parsedData.name);
                 intent.putExtra("status", parsedData.status);
@@ -151,10 +141,28 @@ public class DataInputActivity extends AppCompatActivity {
                 intent.putExtra("reSowingRate", parsedData.reSowingRate);
                 intent.putExtra("missSowingRate", parsedData.missSowingRate);
                 intent.putExtra("deviationRate", parsedData.deviationRate);
-                intent.putExtra("current", parsedData.current);
+                intent.putExtra("current", parsedData.seed_current);
                 intent.putExtra("lightIntensity", parsedData.lightIntensity);
-
+                // 启动 MainActivity_seed_watch（播种监控界面）
                 startActivity(intent);
+            }
+        });
+        backtomenu2=findViewById(R.id.backtomenu2);
+        backtomenu2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // 创建第一个 Intent，用于传递电机数据并跳转到 MainActivity_Machine_watch
+                Intent intent2 = new Intent(DataInputActivity.this, MainActivity_Machine_watch.class);
+                intent2.putExtra("name", parsedData2.name);
+                intent2.putExtra("status", parsedData2.status);
+                intent2.putExtra("rotationRate", parsedData2.rotationRate);
+                intent2.putExtra("voltage", parsedData2.voltage);
+                intent2.putExtra("temperature", parsedData2.temperature);
+                intent2.putExtra("circleNum", parsedData2.circleNum);
+                intent2.putExtra("motorStatus", parsedData2.motorStatus);
+                intent2.putExtra("current", parsedData2.motor_current);
+                // 启动 MainActivity_Machine_watch（电机监控界面）
+                startActivity(intent2);
             }
         });
     }
@@ -190,11 +198,11 @@ public class DataInputActivity extends AppCompatActivity {
                 case "00010011": // 功能码 0x13
                     // 解析 sowingAmount, current, reSowingRate, missSowingRate
                     data.sowingAmount = String.valueOf(Integer.parseInt(binaryData.substring(10, 34), 2));
-                    data.current = String.format("%.1f mA", Integer.parseInt(binaryData.substring(34, 44), 2) * 0.2);
+                    data.seed_current = String.format("%.1f mA", Integer.parseInt(binaryData.substring(34, 44), 2) * 0.2);
                     data.reSowingRate = String.format("%.1f %%", Integer.parseInt(binaryData.substring(44, 54), 2) * 0.1);
                     data.missSowingRate = String.format("%.1f %%", Integer.parseInt(binaryData.substring(54, 64), 2) * 0.1);
 
-                    Log.d("DataInputActivity", "Parsed sowingAmount in 0x13: "+"\n" + data.sowingAmount +"\n" +"current=" +data.current +"\n" +"missSowingRate=" +data.missSowingRate +"\n");
+                    Log.d("DataInputActivity", "Parsed sowingAmount in 0x13: "+"\n" + data.sowingAmount +"\n" +"current=" +data.seed_current +"\n" +"missSowingRate=" +data.missSowingRate +"\n");
                     break;
 
                 case "00010100": // 功能码 0x14
@@ -221,7 +229,8 @@ public class DataInputActivity extends AppCompatActivity {
                     }
                     break;
 
-                case "00010001":
+                case "00010001": //功能码0x11
+                    Log.d("code", String.valueOf(binaryData));
                     String statusCode=binaryData.substring(8, 10);
                     switch (statusCode){
                         case "00":
@@ -276,13 +285,19 @@ public class DataInputActivity extends AppCompatActivity {
                             Log.w("DataInputActivity", "未定义的电机状态码: " + motorStatusNum);
                             break;
                     }
+                    Log.d("rotationrate bits:",binaryData.substring(14,26));
                     data.rotationRate = String.valueOf(Integer.parseInt(binaryData.substring(14, 26), 2));
-                    data.current = String.valueOf(Integer.parseInt(binaryData.substring(26, 38), 2)*0.01);
-                    data.circleNum=String.valueOf(Integer.parseInt(binaryData.substring(38, 64), 2)*0.1);
+                    Log.d("motor_current bits:",binaryData.substring(26,38));
+                    data.motor_current = String.format("%.2f ",Integer.parseInt(binaryData.substring(26, 38), 2)*0.01);
+                    Log.d("circleNum bits:",binaryData.substring(38,64));
+                    data.circleNum=String.format("%.1f",Integer.parseInt(binaryData.substring(38, 64), 2)*0.1);
                     break;
-                case "00010010":
+
+                case "00010010"://功能码0x12
+                    Log.d("voltage bits:",binaryData.substring(8,18));
                     data.voltage = String.valueOf(Integer.parseInt(binaryData.substring(8, 18), 2)*0.1);
-                    data.current = String.valueOf(Integer.parseInt(binaryData.substring(18, 29), 2)*0.1);
+                    Log.d("temperature bits:",binaryData.substring(18,29));
+                    data.temperature = String.valueOf(Integer.parseInt(binaryData.substring(18, 29), 2)*0.1);
 
 
                 default:
@@ -298,34 +313,6 @@ public class DataInputActivity extends AppCompatActivity {
         return data;
     }
 
-    // 辅助方法：解析状态码
-    private String parseStatus(String statusBits) {
-        switch (statusBits) {
-            case "00":
-                return "停止工作";
-            case "01":
-                return "开始工作";
-            case "10":
-                return "暂停工作";
-            default:
-                return "未知状态";
-        }
-    }
-
-    // 辅助方法：解析传感器状态码
-    private String parseSensorStatus(String sensorBits) {
-        switch (sensorBits) {
-            case "000":
-                return "正常";
-            case "001":
-                return "堵管";
-            case "010":
-                return "无种";
-            default:
-                return "未知传感器状态";
-        }
-    }
-
     // 定义一个内部类，用于保存解析后的数据
     private static class ParsedData {
         String name;
@@ -335,7 +322,8 @@ public class DataInputActivity extends AppCompatActivity {
         String reSowingRate;
         String missSowingRate;
         String deviationRate;
-        String current;
+        String seed_current;
+        String motor_current;
         String lightIntensity;
         String rotationRate;
         String voltage;
@@ -351,7 +339,8 @@ public class DataInputActivity extends AppCompatActivity {
             if (newData.reSowingRate != null) this.reSowingRate = newData.reSowingRate;
             if (newData.missSowingRate != null) this.missSowingRate = newData.missSowingRate;
             if (newData.deviationRate != null) this.deviationRate = newData.deviationRate;
-            if (newData.current != null) this.current = newData.current;
+            if (newData.seed_current != null) this.seed_current = newData.seed_current;
+            if (newData.motor_current != null) this.motor_current = newData.motor_current;
             if (newData.lightIntensity != null) this.lightIntensity = newData.lightIntensity;
             if (newData.rotationRate != null) this.rotationRate = newData.rotationRate;
             if (newData.voltage != null) this.voltage = newData.voltage;
@@ -359,23 +348,6 @@ public class DataInputActivity extends AppCompatActivity {
             if (newData.circleNum != null) this.circleNum = newData.circleNum;
             if (newData.motorStatus != null) this.motorStatus = newData.motorStatus;
 
-            Log.d("ParsedData", "Updated parsed data: " + this.toString());  // 添加日志
-        }
-
-
-        @Override
-        public String toString() {
-            return "ParsedData{" +
-                    "name='" + name + '\'' +
-                    ", status='" + status + '\'' +
-                    ", sowingAmount='" + sowingAmount + '\'' +
-                    ", singleSowingRate='" + singleSowingRate + '\'' +
-                    ", reSowingRate='" + reSowingRate + '\'' +
-                    ", missSowingRate='" + missSowingRate + '\'' +
-                    ", deviationRate='" + deviationRate + '\'' +
-                    ", current='" + current + '\'' +
-                    ", lightIntensity='" + lightIntensity + '\'' +
-                    '}';
         }
     }
 }
