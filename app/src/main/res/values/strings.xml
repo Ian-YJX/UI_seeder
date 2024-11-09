@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">My Application_UI</string>
+
+    <!-- CAN数据选项数组 -->
+    <string-array name="can_data_options">
+        <item>0x1340010001000808</item>
+        <item>0x140BC47D03F44B00</item>
+        <item>0xB300C0012313575A</item>
+    </string-array>
+
+    <string-array name="can_data_options2">
+        <item>0x1140010001000808</item>
+        <item>0x120BC47D03F44B00</item>
+    </string-array>
+
+</resources>
