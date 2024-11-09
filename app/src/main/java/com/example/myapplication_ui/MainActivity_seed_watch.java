@@ -30,7 +30,7 @@ public class MainActivity_seed_watch extends AppCompatActivity {
         });
 
         // 从Intent获取传递的数据
-        String name = getIntent().getStringExtra("name");
+        //String name = getIntent().getStringExtra("name");
         String stockDistance = getIntent().getStringExtra("stockDistance");
         String sowingAmount = getIntent().getStringExtra("sowingAmount");
         String singleSowingRate = getIntent().getStringExtra("singleSowingRate");
@@ -49,7 +49,7 @@ public class MainActivity_seed_watch extends AppCompatActivity {
 
         if (secondRow != null) {
             // 更新第二行的内容
-            updateRowWithValues(secondRow, name,stockDistance, sowingAmount, singleSowingRate,
+            updateRowWithValues(secondRow,stockDistance, sowingAmount, singleSowingRate,
                     reSowingRate, missSowingRate, deviationRate, current, lightIntensity, status);
         }
 
@@ -58,12 +58,10 @@ public class MainActivity_seed_watch extends AppCompatActivity {
     }
 
     // 辅助方法：更新行数据
-    private void updateRowWithValues(TableRow row,  String name, String stockDistance, String sowingAmount,
+    private void updateRowWithValues(TableRow row, String stockDistance, String sowingAmount,
                                      String singleSowingRate, String reSowingRate,
                                      String missSowingRate, String deviationRate,
                                      String current, String lightIntensity, String status) {
-        // 更新每一列的值
-        ((TextView) row.getChildAt(0)).setText(name); // 株距
         ((TextView) row.getChildAt(1)).setText(stockDistance); // 株距
         ((TextView) row.getChildAt(2)).setText(sowingAmount); // 播种量
         ((TextView) row.getChildAt(3)).setText(singleSowingRate); // 单播率

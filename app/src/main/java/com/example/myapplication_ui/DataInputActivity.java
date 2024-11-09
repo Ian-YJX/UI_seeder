@@ -198,15 +198,15 @@ public class DataInputActivity extends AppCompatActivity {
                 case "00010011": // 功能码 0x13
                     // 解析 sowingAmount, current, reSowingRate, missSowingRate
                     data.sowingAmount = String.valueOf(Integer.parseInt(binaryData.substring(10, 34), 2));
-                    data.seed_current = String.format("%.1f mA", Integer.parseInt(binaryData.substring(34, 44), 2) * 0.2);
-                    data.reSowingRate = String.format("%.1f %%", Integer.parseInt(binaryData.substring(44, 54), 2) * 0.1);
-                    data.missSowingRate = String.format("%.1f %%", Integer.parseInt(binaryData.substring(54, 64), 2) * 0.1);
+                    data.seed_current = String.format("%.2f", Integer.parseInt(binaryData.substring(34, 44), 2) * 0.2);
+                    data.reSowingRate = String.format("%.2f", Integer.parseInt(binaryData.substring(44, 54), 2) * 0.1);
+                    data.missSowingRate = String.format("%.2f", Integer.parseInt(binaryData.substring(54, 64), 2) * 0.1);
 
                     Log.d("DataInputActivity", "Parsed sowingAmount in 0x13: "+"\n" + data.sowingAmount +"\n" +"current=" +data.seed_current +"\n" +"missSowingRate=" +data.missSowingRate +"\n");
                     break;
 
                 case "00010100": // 功能码 0x14
-                    data.deviationRate = String.format("%.1f %%", Integer.parseInt(binaryData.substring(34, 44), 2) * 0.1);
+                    data.deviationRate = String.format("%.2f", Integer.parseInt(binaryData.substring(34, 44), 2) * 0.1);
                     break;
 
                 case "10110011": // 功能码 0xB3
@@ -221,7 +221,7 @@ public class DataInputActivity extends AppCompatActivity {
 
                         // 计算单播率，并格式化为百分比字符串
                         double singleSowingRate = sowingAmountInt != 0 ? (double) singleSowingValue / sowingAmountInt : 0;
-                        data.singleSowingRate = String.format("%.1f%%", singleSowingRate * 100);
+                        data.singleSowingRate = String.format("%.2f", singleSowingRate * 100);
 
                         Log.d("DataInputActivity", "Parsed singleSowingRate in 0xB3: " + data.singleSowingRate);
                     } else {

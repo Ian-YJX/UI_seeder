@@ -21,74 +21,74 @@
         <!-- 创建6行，每行8列的表格 -->
         <!-- 第一行 -->
         <TableRow>
-            <TextView android:text="名称" android:padding="8dp" android:textSize="18sp"/>
-            <TextView android:text="状态" android:padding="8dp" android:textSize="18sp"/>
-            <TextView android:text="转速(rpm)" android:padding="8dp" android:textSize="18sp"/>
-            <TextView android:text="电压(V)" android:padding="8dp" android:textSize="18sp"/>
-            <TextView android:text="电流(A)" android:padding="8dp" android:textSize="18sp"/>
-            <TextView android:text="温度(℃)" android:padding="8dp" android:textSize="18sp"/>
-            <TextView android:text="圈数" android:padding="8dp" android:textSize="18sp"/>
-            <TextView android:text="电机状态" android:padding="8dp" android:textSize="18sp"/>
+            <TextView android:text="名称" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
+            <TextView android:text="状态" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
+            <TextView android:text="转速(rpm)" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
+            <TextView android:text="电压(V)" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
+            <TextView android:text="电流(A)" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
+            <TextView android:text="温度(℃)" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
+            <TextView android:text="圈数" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
+            <TextView android:text="电机状态" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
         </TableRow>
 
         <!-- 第二行，设置绿色背景 -->
         <TableRow android:background="@color/green">
             <TextView android:text="第一列" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
-            <TextView android:text="空闲" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
-            <TextView android:text="0.0" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
-            <TextView android:text="13.4" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
-            <TextView android:text="0.0" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
-            <TextView android:text="37.4" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
-            <TextView android:text="405.3" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
-            <TextView android:text="正常" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
+            <TextView android:text="" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
+            <TextView android:text="" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
+            <TextView android:text="" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
+            <TextView android:text="" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
+            <TextView android:text="" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
+            <TextView android:text="" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
+            <TextView android:text="" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
         </TableRow>
 
         <!-- 第三行 -->
         <TableRow>
             <TextView android:text="第二列" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
-            <TextView android:text="空闲" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
-            <TextView android:text="0.0" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
-            <TextView android:text="13.4" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
-            <TextView android:text="0.0" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
-            <TextView android:text="34.8" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
-            <TextView android:text="405.3" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
-            <TextView android:text="正常" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
+            <TextView android:text="" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
+            <TextView android:text="" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
+            <TextView android:text="" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
+            <TextView android:text="" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
+            <TextView android:text="" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
+            <TextView android:text="" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
+            <TextView android:text="" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
         </TableRow>
 
         <!-- 第四行 -->
         <TableRow>
             <TextView android:text="第三列" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
-            <TextView android:text="空闲" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
-            <TextView android:text="0.0" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
-            <TextView android:text="13.2" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
-            <TextView android:text="0.0" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
-            <TextView android:text="33.6" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
-            <TextView android:text="405.3" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
-            <TextView android:text="正常" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
+            <TextView android:text="" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
+            <TextView android:text="" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
+            <TextView android:text="" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
+            <TextView android:text="" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
+            <TextView android:text="" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
+            <TextView android:text="" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
+            <TextView android:text="" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
         </TableRow>
 
         <!-- 第五行 -->
         <TableRow>
             <TextView android:text="第四列" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
-            <TextView android:text="空闲" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
-            <TextView android:text="0.0" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
-            <TextView android:text="13.5" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
-            <TextView android:text="0.0" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
-            <TextView android:text="32.4" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
-            <TextView android:text="405.3" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
-            <TextView android:text="正常" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
+            <TextView android:text="" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
+            <TextView android:text="" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
+            <TextView android:text="" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
+            <TextView android:text="" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
+            <TextView android:text="" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
+            <TextView android:text="" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
+            <TextView android:text="" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
         </TableRow>
 
         <!-- 第六行 -->
         <TableRow>
             <TextView android:text="施肥电机" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
-            <TextView android:text="禁用" android:padding="8dp" android:textSize="18sp" android:textColor="@color/red" android:background="@drawable/table_border"/>
-            <TextView android:text="0.0" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
-            <TextView android:text="13.0" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
-            <TextView android:text="0.0" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
-            <TextView android:text="35.2" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
-            <TextView android:text="0.0" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
-            <TextView android:text="关闭" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
+            <TextView android:text="" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
+            <TextView android:text="" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
+            <TextView android:text="" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
+            <TextView android:text="" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
+            <TextView android:text="" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
+            <TextView android:text="" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
+            <TextView android:text="" android:padding="8dp" android:textSize="18sp" android:background="@drawable/table_border"/>
         </TableRow>
 
     </TableLayout>
