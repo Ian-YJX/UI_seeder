@@ -41,8 +41,8 @@ public class MainActivity_GNSS_DataFrame extends AppCompatActivity {
             // 调用 GNSSParser 解析用户输入的命令
             String GNSSoutput = GNSSParser.parseCommand(input);
 
-            // 调用 NMEAParser 解析 NMEA 文件
-            List<Map<String, String>> NMEAData = NMEAParser.parseNMEAFile(this);
+            // 调用 NMEAParser 解析模拟的 NMEA 数据
+            List<Map<String, String>> NMEAData = NMEAParser.parseNMEASimulatedData();
 
             // 格式化 NMEA 解析结果为字符串
             StringBuilder NMEAoutput = new StringBuilder();

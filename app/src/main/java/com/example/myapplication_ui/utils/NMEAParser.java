@@ -1,50 +1,39 @@
 package com.example.myapplication_ui.utils;
 
 import android.content.Context;
-import android.content.res.AssetManager;
+import android.util.Log;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class NMEAParser {
 
-    // 解析 NMEA 文件
-    public static List<Map<String, String>> parseNMEAFile(Context context) {
+    // 解析 NMEA 模拟数据
+    public static List<Map<String, String>> parseNMEASimulatedData() {
         List<Map<String, String>> parsedData = new ArrayList<>();
-        try {
-            // 获取 AssetManager 对象
-            AssetManager assetManager = context.getAssets();
+        // 获取模拟数据
+        String simulatedData = NMEASimulator.generateAllNMEA();
 
-            // 读取 assets 中的文件
-            InputStream inputStream = assetManager.open("nmea_data.txt");
-            try (BufferedReader br = new BufferedReader(new InputStreamReader(inputStream))) {
-                String line;
-                while ((line = br.readLine()) != null) {
-                    if (line.startsWith("$")) { // 忽略非 NMEA 语句
-                        try {
-                            parsedData.add(parseNMEASentence(line));
-                        } catch (IllegalArgumentException e) {
-                            System.err.println("Error parsing line: " + line + " - " + e.getMessage());
-                        }
-                    }
+        // 逐行处理模拟数据
+        String[] lines = simulatedData.split("\n");
+        for (String line : lines) {
+            if (line.startsWith("$")) { // 忽略非 NMEA 语句
+                try {
+                    parsedData.add(parseNMEASentence(line));
+                } catch (IllegalArgumentException e) {
+                    System.err.println("Error parsing line: " + line + " - " + e.getMessage());
                 }
             }
-        } catch (IOException e) {
-            throw new RuntimeException("Error reading file: " + e.getMessage(), e);
         }
+
         return parsedData;
     }
 
     // 解析单个 NMEA 语句
     public static Map<String, String> parseNMEASentence(String sentence) {
-        Map<String, String> result = new HashMap<>();
+        Map<String, String> result = new java.util.HashMap<>();
 
         // 检查语句有效性
         if (!sentence.startsWith("$") || !sentence.contains("*")) {
@@ -132,6 +121,7 @@ public class NMEAParser {
         result.put("大地水准面离地面高度单位", fields[12]);
         result.put("DGPS 年龄", fields.length > 13 ? fields[13] : "");
         result.put("DGPS 站点ID", fields.length > 14 ? fields[14] : "");
+        Log.d("parsed","GGA");
     }
 
     // 解析 GLL 语句
@@ -142,6 +132,7 @@ public class NMEAParser {
         result.put("经度方向", fields[4]);
         result.put("时间", fields[5]);
         result.put("状态", fields[6]);
+        Log.d("parsed","GLL");
     }
 
     // 解析 GSA 语句
@@ -152,6 +143,7 @@ public class NMEAParser {
         result.put("位置精度因子", fields.length > 15 ? fields[15] : "");
         result.put("水平精度因子", fields.length > 16 ? fields[16] : "");
         result.put("垂直精度因子", fields.length > 17 ? fields[17] : "");
+        Log.d("parsed","GSA");
     }
 
     // 解析 GST 语句
@@ -164,6 +156,7 @@ public class NMEAParser {
         result.put("纬度误差", fields[6]);
         result.put("经度误差", fields[7]);
         result.put("海拔误差", fields[8]);
+        Log.d("parsed","GST");
     }
 
     // 解析 GSV 语句
@@ -175,6 +168,7 @@ public class NMEAParser {
             List<String> satelliteInfo = new ArrayList<>();
             satelliteInfo.addAll(Arrays.asList(fields).subList(4, fields.length));
             result.put("卫星信息", String.join(",", satelliteInfo));
+            Log.d("parsed","GSV");
         }
     }
 
@@ -191,6 +185,7 @@ public class NMEAParser {
         result.put("日期", fields[9]);
         result.put("磁偏角", fields[10]);
         result.put("磁偏角方向", fields.length > 11 ? fields[11] : "");
+        Log.d("parsed","RMC");
     }
 
     // 解析 VTG 语句
@@ -203,6 +198,7 @@ public class NMEAParser {
         result.put("节单位", fields[6]);
         result.put("速度(km/h)", fields[7]);
         result.put("公里每小时单位", fields[8]);
+        Log.d("parsed","VTG");
     }
 
     // 解析 ZDA 语句
@@ -213,5 +209,6 @@ public class NMEAParser {
         result.put("年", fields[4]);
         result.put("本地时区小时", fields[5]);
         result.put("本地时区分钟", fields[6]);
+        Log.d("parsed","ZDA");
     }
 }

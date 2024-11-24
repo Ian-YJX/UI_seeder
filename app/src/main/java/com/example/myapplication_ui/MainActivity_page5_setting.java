@@ -22,6 +22,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.example.myapplication_ui.utils.CANFrameGenerator;
 import com.example.myapplication_ui.utils.DBCParser;
+import com.example.myapplication_ui.utils.NMEASpeedParser;
 
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
@@ -96,13 +97,28 @@ public class MainActivity_page5_setting extends AppCompatActivity {
     }
 
     // 设置监听器
+    @SuppressLint("SetTextI18n")
     private void initListeners() {
         checkBox1.setOnCheckedChangeListener((buttonView, isChecked) -> handleCheckboxChange(isChecked, 1, checkBox1, checkBox2, checkBox3));
 
-        checkBox2.setOnCheckedChangeListener((buttonView, isChecked) -> handleCheckboxChange(isChecked, 0, checkBox2, checkBox1, checkBox3));
+        checkBox2.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            handleCheckboxChange(isChecked, 0, checkBox2, checkBox1, checkBox3);
+            String GNSSspeed = NMEASpeedParser.parseNMEASimulatedData();
+
+            // 添加空值检查
+            if (GNSSspeed != null && !GNSSspeed.isEmpty()) {
+                Log.d("GNSS", GNSSspeed);
+                speedSet.setText(GNSSspeed);
+            } else {
+                Log.d("GNSS", "GNSS speed is null or empty");
+                speedSet.setText("0.00");  // 如果返回值为空，则设置为默认值
+            }
+        });
+
 
         checkBox3.setOnCheckedChangeListener((buttonView, isChecked) -> {
             handleCheckboxChange(isChecked, 2, checkBox3, checkBox1, checkBox2);
+            speedSet.setText("0.00");
             speedSet.setEnabled(isChecked);
             if (!isChecked) {
                 speedSet.setText("0.00");
@@ -126,24 +142,25 @@ public class MainActivity_page5_setting extends AppCompatActivity {
         }
     }
 
+    @SuppressLint("SetTextI18n")
     private void updateCAN() {
         if (currentMessage == null) {
             textCAN.setText("未加载 CAN 消息");
-            Log.d("currentMessage", "NULL");
+            //Log.d("currentMessage", "NULL");
             return;
         }
-        Log.d("currentMessage", "Not NULL");
+        //Log.d("currentMessage", "Not NULL");
         String feiliangStr=feiliang.getText().toString();
-        Log.d("feiliang raw_data",feiliangStr);
+        //Log.d("feiliang raw_data",feiliangStr);
         double feiliangDouble=Double.parseDouble(feiliang.getText().toString());
-        Log.d("feiliang int", String.valueOf(feiliangDouble));
+        //Log.d("feiliang int", String.valueOf(feiliangDouble));
 
         Map<String, String> values = new HashMap<>();
         values.put("code", "226");
         values.put("Speed_Cmd", String.valueOf(boxIndex));
         values.put("Speed_Value", speedSet.getText().toString());
         values.put("fertilizer_Value", feiliang.getText().toString());
-        Log.d("values", values.toString());
+        //Log.d("values", values.toString());
         try {
             String hexCAN = CANFrameGenerator.generateFrame(currentMessage, values);
             textCAN.setText(hexCAN);
@@ -160,9 +177,9 @@ public class MainActivity_page5_setting extends AppCompatActivity {
 
             // 解析 DBC 文件
             List<DBCParser.Message> messages = DBCParser.parseDBCString(dbcContent);
-            Log.d("DBC Messages", "Total messages parsed: " + messages.size());
+            //Log.d("DBC Messages", "Total messages parsed: " + messages.size());
             for (DBCParser.Message message : messages) {
-                Log.d("DBC Message ID", message.id); // 打印所有消息 ID
+                //Log.d("DBC Message ID", message.id); // 打印所有消息 ID
             }
 
             // 查找特定消息
@@ -171,11 +188,11 @@ public class MainActivity_page5_setting extends AppCompatActivity {
                     .findFirst()
                     .orElseThrow(() -> new RuntimeException("未找到指定消息"));
             //Log.d("DBC Selected Message", "Found message with ID: " + currentMessage.id);
-            Log.d("message_id",currentMessage.getId());
-            Log.d("message_dlc",Integer.toString(currentMessage.getDlc()));
+            //Log.d("message_id",currentMessage.getId());
+            //Log.d("message_dlc",Integer.toString(currentMessage.getDlc()));
         } catch (Exception e) {
             Toast.makeText(this, "加载 DBC 文件失败：" + e.getMessage(), Toast.LENGTH_LONG).show();
-            Log.e("DBC Error", "解析错误", e); // 打印详细错误日志
+            //Log.e("DBC Error", "解析错误", e); // 打印详细错误日志
         }
     }
 
@@ -203,9 +220,9 @@ public class MainActivity_page5_setting extends AppCompatActivity {
                     Log.d("IllegalValue"+value,"<0");
                     value = 0.0;
                     inputField.setText(String.valueOf(value));
-                    Log.d("Revised text",inputField.getText().toString());
+                    //Log.d("Revised text",inputField.getText().toString());
                 } else if (value > maxValue) {
-                    Log.d("IllegalValue"+value,">"+ maxValue);
+                   //Log.d("IllegalValue"+value,">"+ maxValue);
                     value = maxValue;
                     inputField.setText(String.valueOf(value));
 

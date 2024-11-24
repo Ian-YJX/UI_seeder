@@ -48,7 +48,12 @@ public class GNSSParser {
      */
     public static String parseCommand(String command) {
         // 预处理输入命令
-        String cleanedCommand = preprocessCommand(command);
+        String cleanedCommand;
+        try {
+            cleanedCommand = preprocessCommand(command);
+        } catch (IllegalArgumentException e) {
+            return "输入命令无效：" + e.getMessage();
+        }
 
         // 校验头部是否为 UBX 协议
         if (!cleanedCommand.startsWith("B562")) {
@@ -136,29 +141,39 @@ public class GNSSParser {
     private static boolean validateLength(String cleanedCommand) {
         if (cleanedCommand.length() < 12) return false;
 
-        // UBX 协议内容长度由 bytes[4] 和 bytes[5] 指定
-        int payloadLength = Integer.parseInt(cleanedCommand.substring(8, 12), 16) / 256; // bytes[4] + bytes[5]
-        Log.d("payloadlegth", Integer.toString(payloadLength));
-        // 计算期望的完整命令长度：头部（2）+ 消息类别（1）+消息id（1）+长度字段（2）+ 负载长度 + 校验和（2）
-        int expectedLength = 8 + payloadLength;
-        Log.d("cleanedCommand.length", Integer.toString(cleanedCommand.length()));
-        return cleanedCommand.length() == expectedLength * 2; // 转为字符长度
+        try {
+            // UBX 协议内容长度由 bytes[4] 和 bytes[5] 指定
+            int payloadLength = Integer.parseInt(cleanedCommand.substring(8, 12), 16) / 256; // bytes[4] + bytes[5]
+            Log.d("payloadlegth", Integer.toString(payloadLength));
+            // 计算期望的完整命令长度：头部（2）+ 消息类别（1）+消息id（1）+长度字段（2）+ 负载长度 + 校验和（2）
+            int expectedLength = 8 + payloadLength;
+            Log.d("cleanedCommand.length", Integer.toString(cleanedCommand.length()));
+            return cleanedCommand.length() == expectedLength * 2; // 转为字符长度
+        } catch (NumberFormatException e) {
+            Log.d("validateLength", "命令长度字段格式无效");
+            return false;
+        }
     }
 
     // 校验校验和是否正确
     private static boolean validateChecksum(String cleanedCommand) {
         int ckA = 0, ckB = 0;
 
-        // 校验和仅对 payload 部分进行计算（从第 2 字节到倒数第 3 字节）
-        for (int i = 4; i < cleanedCommand.length() - 4; i += 2) {
-            int value = Integer.parseInt(cleanedCommand.substring(i, i + 2), 16);
-            ckA = (ckA + value) & 0xFF;
-            ckB = (ckB + ckA) & 0xFF;
-        }
+        try {
+            // 校验和仅对 payload 部分进行计算（从第 2 字节到倒数第 3 字节）
+            for (int i = 4; i < cleanedCommand.length() - 4; i += 2) {
+                int value = Integer.parseInt(cleanedCommand.substring(i, i + 2), 16);
+                ckA = (ckA + value) & 0xFF;
+                ckB = (ckB + ckA) & 0xFF;
+            }
 
-        int receivedCkA = Integer.parseInt(cleanedCommand.substring(cleanedCommand.length() - 4, cleanedCommand.length() - 2), 16);
-        int receivedCkB = Integer.parseInt(cleanedCommand.substring(cleanedCommand.length() - 2), 16);
-        return ckA == receivedCkA && ckB == receivedCkB;
+            int receivedCkA = Integer.parseInt(cleanedCommand.substring(cleanedCommand.length() - 4, cleanedCommand.length() - 2), 16);
+            int receivedCkB = Integer.parseInt(cleanedCommand.substring(cleanedCommand.length() - 2), 16);
+            return ckA == receivedCkA && ckB == receivedCkB;
+        } catch (NumberFormatException e) {
+            Log.d("validateChecksum", "校验和格式无效");
+            return false;
+        }
     }
 
     // 预处理输入命令
