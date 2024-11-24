@@ -14,7 +14,7 @@ public class DBCParser {
     public static List<Message> parseDBCString(String dbcContent) {
         List<Message> messages = new ArrayList<>();
         Message currentMessage = null;
-        //Log.d("DBC Parsing", "Parsing begin!");
+        Log.d("DBC Parsing", "Parsing begin!");
 
         // 逐行读取 DBC 字符串内容
         BufferedReader reader = new BufferedReader(new StringReader(dbcContent));
@@ -40,20 +40,20 @@ public class DBCParser {
                     String[] parts = line.split(":")[1].trim().split(" ");
                     String[] namepart = line.split(":")[0].trim().split(" ");
                     String name = namepart[1];
-                    //Log.d("Signal Name", name);
+                    Log.d("Signal Name", name);
 
                     // 解析信号的位置信息
                     String[] bitInfo = parts[0].split("\\|");
                     int startBit = Integer.parseInt(bitInfo[0]);
                     int length = Integer.parseInt(bitInfo[1].split("@")[0]);
                     boolean isSigned = bitInfo[1].contains("-");
-                    //Log.d("BitInfo", "startBit=" + startBit + " length=" + length + " isSigned=" + isSigned);
+                    Log.d("BitInfo", "startBit=" + startBit + " length=" + length + " isSigned=" + isSigned);
 
                     // 解析缩放因子和偏移量
                     String[] factorOffset = parts[1].replace("(", "").replace(")", "").split(",");
                     double factor = Double.parseDouble(factorOffset[0]);
                     double offset = Double.parseDouble(factorOffset[1]);
-                    //Log.d("Factor/Offset", "factor=" + factor + " offset=" + offset);
+                    Log.d("Factor/Offset", "factor=" + factor + " offset=" + offset);
 
                     // 解析单位（如果没有单位，描述为引号中的内容）
                     String unit = parts[3].replace("\"", "");
@@ -71,7 +71,7 @@ public class DBCParser {
 
                     // 解析发送节点（最后一部分是发送节点）
                     String sender = parts[parts.length - 1].trim();
-                    //Log.d("Sender", sender);
+                    Log.d("Sender", sender);
 
                     // 添加信号到当前消息
                     currentMessage.signals.add(new Signal(name, startBit, length, isSigned, factor, offset, unit, description, sender));
@@ -122,6 +122,18 @@ public class DBCParser {
             this.name = name;
             this.dlc = dlc;
             this.signals = new ArrayList<>();
+        }
+
+        public String getId() {
+            return id;
+        }
+
+        public int getDlc() {
+            return dlc;
+        }
+
+        public List<Signal> getSignals() {
+            return signals;
         }
     }
 }

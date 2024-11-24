@@ -18,12 +18,12 @@ public class CANFrameGenerator {
         for (DBCParser.Signal signal : message.signals) {
             // 获取用户输入的值
             String valueString = values.getOrDefault(signal.name, "0");
-            double value = Integer.parseInt(valueString);
+            double value = Double.parseDouble(valueString);
             // 应用缩放因子和偏移量
             int rawValue = (int) ((value - signal.offset) / signal.factor);
             // 转换为二进制字符串，按信号长度补齐
             String binaryValue = Integer.toBinaryString(rawValue);
-            if(signal.name.equals("fertilizer_Cmd"))
+            if(signal.name.equals("Speed_Value"))
             {
                 Log.d("valueString",valueString);
                 Log.d("binaryValue",binaryValue);

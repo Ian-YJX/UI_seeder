@@ -165,6 +165,9 @@ public class MainActivity_page2_bozhongzuoye extends AppCompatActivity {
                     .filter(m -> "18FDD001".equals(m.id))
                     .findFirst()
                     .orElseThrow(() -> new RuntimeException("未找到指定消息"));
+            Log.d("message_id",currentMessage.getId());
+            Log.d("message_dlc",Integer.toString(currentMessage.getDlc()));
+            Log.d("message_signals", currentMessage.getSignals().toString());
         } catch (Exception e) {
             Toast.makeText(this, "加载 DBC 文件失败：" + e.getMessage(), Toast.LENGTH_LONG).show();
         }
