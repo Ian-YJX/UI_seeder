@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity_page1_menu">
+    <!--page1-->
+
+    <!--  需要文字对于图标进行描述 在这里仅仅做一个例子，后面进行添加-->
+
+    <ImageButton
+        android:id="@+id/Bozhongzuoye"
+        android:layout_width="120dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="180dp"
+        android:layout_marginTop="200dp"
+        android:background="@drawable/bozhongzuoye"
+        android:contentDescription="播种作业"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+    <ImageButton
+        android:id="@+id/Machine_watch"
+        android:layout_width="120dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="200dp"
+        android:background="@drawable/paizhong"
+        android:contentDescription="电机监控"
+        app:layout_constraintStart_toEndOf="@id/Bozhongzuoye"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/seed_watch"
+        android:layout_width="120dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="200dp"
+        android:background="@drawable/shifeicanshu"
+        android:contentDescription="种子监控"
+        app:layout_constraintStart_toEndOf="@id/Machine_watch"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/setting_back"
+        android:layout_width="120dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/back"
+        android:contentDescription="返回"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/setting"
+        android:layout_width="120dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="200dp"
+        android:background="@drawable/setting"
+        android:contentDescription="系统设置"
+        app:layout_constraintStart_toEndOf="@id/seed_watch"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/setting_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="40dp"
+        android:text="系统设置"
+        android:textSize="25sp"
+        app:layout_constraintStart_toEndOf="@+id/seed_watch_text"
+        app:layout_constraintTop_toBottomOf="@+id/setting" />
+
+    <TextView
+        android:id="@+id/seed_watch_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="40dp"
+        android:text="种子监控"
+        android:textSize="25sp"
+        app:layout_constraintStart_toEndOf="@+id/Machine_watch_text"
+        app:layout_constraintTop_toBottomOf="@+id/seed_watch" />
+
+    <TextView
+        android:id="@+id/Machine_watch_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="40dp"
+        android:text="电机监控"
+        android:textSize="25sp"
+        app:layout_constraintStart_toEndOf="@+id/Bozhongzuoye_text"
+        app:layout_constraintTop_toBottomOf="@+id/Machine_watch" />
+
+    <TextView
+        android:id="@+id/Bozhongzuoye_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="192dp"
+        android:layout_marginTop="40dp"
+        android:text="播种作业"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Bozhongzuoye" />
+
+    <TextView
+        android:id="@+id/Menu_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="菜单"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_marginTop="10dp"
+        android:background="#CCCCCC"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Menu_text" />
+    <!-- 在完成调试后，需要对于按键的位置进行定义-->
+</androidx.constraintlayout.widget.ConstraintLayout>

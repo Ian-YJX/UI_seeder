@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity_page4_seed_watch">
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:stretchColumns="*"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- 表头行 -->
+        <TableRow android:background="@drawable/table_border">
+
+            <TextView
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:text="名称"
+                android:textSize="18sp" />
+
+            <TextView
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:text="株距(cm)"
+                android:textSize="18sp" />
+
+            <TextView
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:text="播种量"
+                android:textSize="18sp" />
+
+            <TextView
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:text="单播(%)"
+                android:textSize="18sp" />
+
+            <TextView
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:text="重播(%)"
+                android:textSize="18sp" />
+
+            <TextView
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:text="漏播(%)"
+                android:textSize="18sp" />
+
+            <TextView
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:text="变差(%)"
+                android:textSize="18sp" />
+
+            <TextView
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:text="电流(mA)"
+                android:textSize="18sp" />
+
+            <TextView
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:text="光强"
+                android:textSize="18sp" />
+
+            <TextView
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:text="状态"
+                android:textSize="18sp" />
+        </TableRow>
+
+        <!-- 第一行数据 -->
+        <TableRow android:background="@color/green">
+
+            <TextView
+                android:id="@+id/name1"
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:text="第一列"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/spacing1"
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/seedingAmount1"
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/singleSowingRate1"
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/reSowingRate1"
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/missSowingRate1"
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/deviationRate1"
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/current1"
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/lightIntensity1"
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/status1"
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:textSize="18sp" />
+        </TableRow>
+
+        <!-- 第二行数据 -->
+        <TableRow android:background="@drawable/table_border">
+
+            <TextView
+                android:id="@+id/name2"
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:text="第二列"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/spacing2"
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/seedingAmount2"
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/singleSowingRate2"
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/reSowingRate2"
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/missSowingRate2"
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/deviationRate2"
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/current2"
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/lightIntensity2"
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/status2"
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:textSize="18sp" />
+        </TableRow>
+
+        <!-- 第三行数据 -->
+        <TableRow android:background="@drawable/table_border">
+
+            <TextView
+                android:id="@+id/name3"
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:text="第三列"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/spacing3"
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/seedingAmount3"
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/singleSowingRate3"
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/reSowingRate3"
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/missSowingRate3"
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/deviationRate3"
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/current3"
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/lightIntensity3"
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/status3"
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:textColor="@color/red"
+                android:textSize="18sp" />
+        </TableRow>
+
+        <!-- 第四行数据 -->
+        <TableRow android:background="@drawable/table_border">
+
+            <TextView
+                android:id="@+id/name4"
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:text="第四列"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/spacing4"
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/seedingAmount4"
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/singleSowingRate4"
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/reSowingRate4"
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/missSowingRate4"
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/deviationRate4"
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/current4"
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/lightIntensity4"
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/status4"
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:textColor="@color/red"
+                android:textSize="18sp" />
+        </TableRow>
+
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/page4title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="种子监控"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/seed_watch_backtomenu"
+        android:layout_width="105dp"
+        android:layout_height="109dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/back"
+        android:contentDescription="返回"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/seed_watch_gotointent"
+        android:layout_width="105dp"
+        android:layout_height="109dp"
+        android:layout_marginStart="460dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/start"
+        android:contentDescription="返回"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/seed_watch_backtohome"
+        android:layout_width="66dp"
+        android:layout_height="86dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="12dp"
+        android:background="@null"
+        android:contentDescription="返回初始界面"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/home" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_marginTop="10dp"
+        android:background="#CCCCCC"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/page4title" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

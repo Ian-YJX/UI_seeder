@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity_page2_bozhongzuoye">
+    <!--page2-->
+
+    <Button
+        android:id="@+id/error"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="130dp"
+        android:layout_marginEnd="70dp"
+        android:backgroundTint="@color/green"
+        android:text="故障"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/disable"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="70dp"
+        android:backgroundTint="@color/green"
+        android:text="禁用"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/error" />
+
+    <ImageButton
+        android:id="@+id/imageRow2"
+        android:layout_width="100dp"
+        android:layout_height="190dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginBottom="20dp"
+        android:background="@null"
+        android:contentDescription="第二列电机状态"
+        android:tag="tbjdisa"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageRow1"
+        app:srcCompat="@drawable/tbjdisa" />
+
+    <TextView
+        android:id="@+id/bozhongzuoye1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="250dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="250dp"
+        android:hint="播种作业"
+        android:textColor="@color/black"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/zhuju_zeng"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="110dp"
+        android:layout_marginEnd="340dp"
+        android:backgroundTint="@color/green"
+        android:onClick="zhuju_zeng"
+        android:text="+"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/zhuju"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="130dp"
+        android:layout_marginEnd="10dp"
+        android:text="20"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toStartOf="@+id/zhuju_zeng"
+        app:layout_constraintStart_toEndOf="@+id/zhuju_jian"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/zhuju_jian"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="110dp"
+        android:backgroundTint="@color/green"
+        android:onClick="zhuju_jian"
+        android:text="-"
+        android:textSize="25sp"
+        app:layout_constraintStart_toEndOf="@+id/textView4"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <Button
+        android:id="@+id/feiliang_zeng"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="340dp"
+        android:backgroundTint="@color/green"
+        android:onClick="feiliang_zeng"
+        android:text="+"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/zhuju_zeng" />
+
+    <Button
+        android:id="@+id/feiliang_jian"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/green"
+        android:onClick="feiliang_jian"
+        android:text="-"
+        android:textSize="30sp"
+        app:layout_constraintStart_toEndOf="@+id/textView5"
+        app:layout_constraintTop_toBottomOf="@+id/zhuju_jian" />
+
+    <TextView
+        android:id="@+id/feiliang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="10dp"
+        android:text="25"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toStartOf="@+id/feiliang_zeng"
+        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintStart_toEndOf="@+id/feiliang_jian"
+        app:layout_constraintTop_toBottomOf="@+id/zhuju" />
+
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="250dp"
+        android:layout_marginTop="145dp"
+        android:text="设定株距："
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="250dp"
+        android:layout_marginTop="60dp"
+        android:text="设定肥量："
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <TextView
+        android:id="@+id/CANe1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
+        android:text="CAN数据帧："
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/bozhongzuoye_backtomenu"
+        android:layout_width="120dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/back"
+        android:contentDescription="返回"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="145dp"
+        android:text="厘米"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/zhuju_zeng"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="60dp"
+        android:text="千克/亩"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/feiliang_zeng"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <TextView
+        android:id="@+id/row1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="211dp"
+        android:layout_marginBottom="15dp"
+        android:text="第一列"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/imageRow1"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/row2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="90dp"
+        android:layout_marginBottom="15dp"
+        android:text="第二列"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/imageRow2"
+        app:layout_constraintStart_toEndOf="@+id/row1" />
+
+    <TextView
+        android:id="@+id/Shifei"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:layout_marginBottom="15dp"
+        android:text="施肥电机"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/imageShifei"
+        app:layout_constraintStart_toEndOf="@+id/row2" />
+
+    <TextView
+        android:id="@+id/row3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:layout_marginBottom="15dp"
+        android:text="第三列"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/imageRow3"
+        app:layout_constraintStart_toEndOf="@+id/Shifei" />
+
+    <TextView
+        android:id="@+id/row4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:layout_marginBottom="15dp"
+        android:text="第四列"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/imageRow4"
+        app:layout_constraintStart_toEndOf="@+id/row3" />
+
+    <ImageButton
+        android:id="@+id/imageRow1"
+        android:layout_width="100dp"
+        android:layout_height="190dp"
+        android:layout_marginStart="184dp"
+        android:layout_marginBottom="20dp"
+        android:background="@null"
+        android:contentDescription="第一列电机状态"
+        android:scaleType="fitCenter"
+        android:tag="tbjdisa"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/tbjdisa" />
+
+    <ImageButton
+        android:id="@+id/imageShifei"
+        android:layout_width="100dp"
+        android:layout_height="190dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginBottom="20dp"
+        android:background="@null"
+        android:contentDescription="施肥电机状态"
+        android:scaleType="fitCenter"
+        android:tag="tbjdisa"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageRow2"
+        app:srcCompat="@drawable/tbjdisa" />
+
+    <ImageButton
+        android:id="@+id/imageRow3"
+        android:layout_width="100dp"
+        android:layout_height="190dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginBottom="20dp"
+        android:background="@null"
+        android:contentDescription="第三列电机状态"
+        android:scaleType="fitCenter"
+        android:tag="tbjdisa"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageShifei"
+        app:srcCompat="@drawable/tbjdisa" />
+
+    <ImageButton
+        android:id="@+id/imageRow4"
+        android:layout_width="100dp"
+        android:layout_height="190dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginBottom="20dp"
+        android:background="@null"
+        android:contentDescription="第四列电机状态"
+        android:scaleType="fitCenter"
+        android:tag="tbjdisa"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageRow3"
+        app:srcCompat="@drawable/tbjdisa" />
+
+    <ImageButton
+        android:id="@+id/bozhongzuoye_backtohome"
+        android:layout_width="56dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="12dp"
+        android:background="@null"
+        android:contentDescription="返回初始界面"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/home" />
+
+    <Spinner
+        android:id="@+id/seedType"
+        android:layout_width="144dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="130dp"
+        android:minHeight="48dp"
+        android:entries="@array/seed_types"
+        android:prompt="@string/seed_type_hint"
+        android:spinnerMode="dropdown"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.02"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_marginTop="10dp"
+        android:background="#CCCCCC"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bozhongzuoye1" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

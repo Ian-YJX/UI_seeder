@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- 用户输入框 -->
+    <EditText
+        android:id="@+id/inputField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/editbox_background"
+        android:hint="请输入 UBX 命令"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:padding="8dp" />
+
+    <!-- 解析按钮 -->
+    <Button
+        android:id="@+id/parseButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/inputField"
+        android:layout_marginTop="8dp"
+        android:text="解析" />
+
+    <!-- 显示解析结果 -->
+    <TextView
+        android:id="@+id/outputGNSS"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/parseButton"
+        android:layout_marginTop="8dp"
+        android:padding="8dp"
+        android:text="GNSS解析结果将在这里显示"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/outputNMEA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/outputGNSS"
+        android:layout_marginTop="10dp"
+        android:padding="8dp"
+        android:text="NMEA文件解析结果将在这里显示"
+        android:textSize="10sp" />
+
+</RelativeLayout>

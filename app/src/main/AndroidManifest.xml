@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/back"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MyApplication_UI"
+        tools:ignore="ExtraText"
+        tools:targetApi="31">
+        <activity
+            android:name=".MainActivity_page0_home"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity_page5_setting"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity_page4_seed_watch"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity_page3_machine_watch"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity_page2_bozhongzuoye"
+            android:exported="false" />
+        <!-- 启动默认的Activity -->
+        <activity
+            android:name=".MainActivity_page1_menu"
+            android:exported="true">
+            <!--android:name=".MainActivity" -->
+            <!-- 激活默认的Activity -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".utils.CANReceiving"
+            android:exported="false" />
+    </application>
+
+</manifest>

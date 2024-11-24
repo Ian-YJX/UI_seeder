@@ -1,0 +1,16 @@
+<!-- res/drawable/rounded_background.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#367d37" /> <!-- Background color -->
+
+    <!-- Set top corners to 150dp radius and bottom corners to 0dp -->
+    <corners
+        android:bottomLeftRadius="0dp"
+        android:bottomRightRadius="0dp"
+        android:topLeftRadius="80dp"
+        android:topRightRadius="80dp" />
+
+    <!-- No border color or width -->
+    <stroke
+        android:width="0dp"
+        android:color="@null" />
+</shape>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 应用名称 -->
+    <string name="app_name">My Application_UI</string>
+
+    <!-- 种子类型数组 -->
+    <string-array name="seed_types">
+        <item>玉米</item>
+        <item>花生</item>
+        <item>高粱</item>
+    </string-array>
+
+    <!-- 提示文本 -->
+    <string name="seed_type_hint">请选择种子类型</string>
+
+    <!-- CAN数据选项数组（组1） -->
+    <string-array name="can_data_options">
+        <item>0x0000000000000000</item>
+        <item>0x1340010001000808</item>
+        <item>0x140BC47D03F44B00</item>
+        <item>0xB300C0012313575A</item>
+    </string-array>
+
+    <!-- CAN数据选项数组（组2） -->
+    <string-array name="can_data_options2">
+        <item>0x0000000000000000</item>
+        <item>0x11400100A0000800</item>
+        <item>0x120BC47D03F44B00</item>
+    </string-array>
+</resources>

@@ -1,0 +1,25 @@
+VERSION "1.0"
+
+NS_ :
+    NS_DESC_
+    CM_
+    BA_DEF_
+    BA_
+    VAL_
+    CAT_
+    CLASS_
+
+BS_:
+    BU_: ECU1
+
+BO_ 18FDD001 TestMessage: 8 ECU1
+ SG_ code : 0|8@1+ (1,0) [0xE1|0xE1] "hex" ECU1
+ SG_ system_setting_Cmd : 8|2@1+ (1,0) [0|3] "00=停止, 01=暂停, 10=开始" ECU1
+ SG_ Seed_type_Cmd : 10|2@1+ (1,0) [0|3] "00=玉米, 01=花生, 10=高粱" ECU1
+ SG_ Distance_Cmd : 12|7@1+ (1,0) [0|128] "cm" ECU1
+ SG_ fertilizer_Cmd : 19|15@1+ (0.001,0) [0|32.768] "kg" ECU1
+ SG_ seed_motor_p1_Cmd : 34|1@1+ (1,0) [0|1] "禁用=0, 启动=1" ECU1
+ SG_ seed_motor_p2_Cmd : 35|1@1+ (1,0) [0|1] "禁用=0, 启动=1" ECU1
+ SG_ seed_motor_p3_Cmd : 36|1@1+ (1,0) [0|1] "禁用=0, 启动=1" ECU1
+ SG_ seed_motor_p4_Cmd : 37|1@1+ (1,0) [0|1] "禁用=0, 启动=1" ECU1
+ SG_ fertilizer_motor_Cmd : 38|1@1+ (1,0) [0|1] "禁用=0, 启动=1" ECU1

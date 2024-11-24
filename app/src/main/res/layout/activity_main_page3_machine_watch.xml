@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity_page3_machine_watch">
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:stretchColumns="*"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- 创建6行，每行8列的表格 -->
+        <!-- 第一行 -->
+        <TableRow>
+
+            <TextView
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:text="名称"
+                android:textSize="18sp" />
+
+            <TextView
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:text="状态"
+                android:textSize="18sp" />
+
+            <TextView
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:text="转速(rpm)"
+                android:textSize="18sp" />
+
+            <TextView
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:text="电压(V)"
+                android:textSize="18sp" />
+
+            <TextView
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:text="电流(A)"
+                android:textSize="18sp" />
+
+            <TextView
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:text="温度(℃)"
+                android:textSize="18sp" />
+
+            <TextView
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:text="圈数"
+                android:textSize="18sp" />
+
+            <TextView
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:text="电机状态"
+                android:textSize="18sp" />
+        </TableRow>
+
+        <!-- 第二行，设置绿色背景 -->
+        <TableRow android:background="@color/green">
+
+            <TextView
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:text="第一列"
+                android:textSize="18sp" />
+
+            <TextView
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:text=""
+                android:textSize="18sp" />
+
+            <TextView
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:text=""
+                android:textSize="18sp" />
+
+            <TextView
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:text=""
+                android:textSize="18sp" />
+
+            <TextView
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:text=""
+                android:textSize="18sp" />
+
+            <TextView
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:text=""
+                android:textSize="18sp" />
+
+            <TextView
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:text=""
+                android:textSize="18sp" />
+
+            <TextView
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:text=""
+                android:textSize="18sp" />
+        </TableRow>
+
+        <!-- 第三行 -->
+        <TableRow>
+
+            <TextView
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:text="第二列"
+                android:textSize="18sp" />
+
+            <TextView
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:text=""
+                android:textSize="18sp" />
+
+            <TextView
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:text=""
+                android:textSize="18sp" />
+
+            <TextView
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:text=""
+                android:textSize="18sp" />
+
+            <TextView
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:text=""
+                android:textSize="18sp" />
+
+            <TextView
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:text=""
+                android:textSize="18sp" />
+
+            <TextView
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:text=""
+                android:textSize="18sp" />
+
+            <TextView
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:text=""
+                android:textSize="18sp" />
+        </TableRow>
+
+        <!-- 第四行 -->
+        <TableRow>
+
+            <TextView
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:text="第三列"
+                android:textSize="18sp" />
+
+            <TextView
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:text=""
+                android:textSize="18sp" />
+
+            <TextView
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:text=""
+                android:textSize="18sp" />
+
+            <TextView
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:text=""
+                android:textSize="18sp" />
+
+            <TextView
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:text=""
+                android:textSize="18sp" />
+
+            <TextView
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:text=""
+                android:textSize="18sp" />
+
+            <TextView
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:text=""
+                android:textSize="18sp" />
+
+            <TextView
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:text=""
+                android:textSize="18sp" />
+        </TableRow>
+
+        <!-- 第五行 -->
+        <TableRow>
+
+            <TextView
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:text="第四列"
+                android:textSize="18sp" />
+
+            <TextView
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:text=""
+                android:textSize="18sp" />
+
+            <TextView
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:text=""
+                android:textSize="18sp" />
+
+            <TextView
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:text=""
+                android:textSize="18sp" />
+
+            <TextView
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:text=""
+                android:textSize="18sp" />
+
+            <TextView
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:text=""
+                android:textSize="18sp" />
+
+            <TextView
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:text=""
+                android:textSize="18sp" />
+
+            <TextView
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:text=""
+                android:textSize="18sp" />
+        </TableRow>
+
+        <!-- 第六行 -->
+        <TableRow>
+
+            <TextView
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:text="施肥电机"
+                android:textSize="18sp" />
+
+            <TextView
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:text=""
+                android:textSize="18sp" />
+
+            <TextView
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:text=""
+                android:textSize="18sp" />
+
+            <TextView
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:text=""
+                android:textSize="18sp" />
+
+            <TextView
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:text=""
+                android:textSize="18sp" />
+
+            <TextView
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:text=""
+                android:textSize="18sp" />
+
+            <TextView
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:text=""
+                android:textSize="18sp" />
+
+            <TextView
+                android:background="@drawable/table_border"
+                android:padding="8dp"
+                android:text=""
+                android:textSize="18sp" />
+        </TableRow>
+
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/page3title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="电机监控"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/machine_watch_backtomenu"
+        android:layout_width="105dp"
+        android:layout_height="109dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/back"
+        android:contentDescription="返回"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/machine_watch_backtohome"
+        android:layout_width="56dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="12dp"
+        android:background="@null"
+        android:contentDescription="返回初始界面"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/home" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_marginTop="10dp"
+        android:background="#CCCCCC"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/page3title" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
