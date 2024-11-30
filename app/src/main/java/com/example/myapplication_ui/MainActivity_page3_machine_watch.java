@@ -30,7 +30,7 @@ public class MainActivity_page3_machine_watch extends AppCompatActivity {
 
         // 获取通过Intent传递过来的数据
         Intent intent = getIntent();
-        String name = intent.getStringExtra("name");
+        //String name = intent.getStringExtra("name");
         String status = intent.getStringExtra("status");
         String rotationRate = intent.getStringExtra("rotationRate");
         String voltage = intent.getStringExtra("voltage");
@@ -44,7 +44,7 @@ public class MainActivity_page3_machine_watch extends AppCompatActivity {
         TableRow tableRow = (TableRow) tableLayout.getChildAt(1); // 获取第二行
 
         // 获取表格中的TextView
-        TextView nameTextView = (TextView) tableRow.getChildAt(0); // 第一列
+        //TextView nameTextView = (TextView) tableRow.getChildAt(0); // 第一列
         TextView statusTextView = (TextView) tableRow.getChildAt(1); // 第二列
         TextView rotationRateTextView = (TextView) tableRow.getChildAt(2); // 第三列
         TextView voltageTextView = (TextView) tableRow.getChildAt(3); // 第四列
@@ -54,7 +54,7 @@ public class MainActivity_page3_machine_watch extends AppCompatActivity {
         TextView motorStatusTextView = (TextView) tableRow.getChildAt(7); // 第八列
 
         // 将Intent传递的数据填充到表格的相应位置
-        nameTextView.setText(name);
+        //nameTextView.setText(name);
         statusTextView.setText(status);
         rotationRateTextView.setText(rotationRate);
         voltageTextView.setText(voltage);

@@ -2,9 +2,6 @@ package com.example.myapplication_ui.utils;
 
 import android.util.Log;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Map;
 
 public class NMEASpeedParser {
@@ -60,12 +57,8 @@ public class NMEASpeedParser {
         String messageType = fields[0];
         result.put("消息类型", messageType); // 将消息类型翻译成中文
 
-        switch (messageType) {
-            case "GPRMC":
-                parseRMC(fields, result);
-                break;
-            default:
-                break;
+        if (messageType.equals("GPRMC")) {
+            parseRMC(fields, result);
         }
 
         return result.get("地面速度");

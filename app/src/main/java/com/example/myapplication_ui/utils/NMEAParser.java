@@ -1,6 +1,5 @@
 package com.example.myapplication_ui.utils;
 
-import android.content.Context;
 import android.util.Log;
 
 import java.util.ArrayList;

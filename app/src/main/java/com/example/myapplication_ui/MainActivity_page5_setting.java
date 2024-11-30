@@ -150,9 +150,9 @@ public class MainActivity_page5_setting extends AppCompatActivity {
             return;
         }
         //Log.d("currentMessage", "Not NULL");
-        String feiliangStr=feiliang.getText().toString();
+        //String feiliangStr=feiliang.getText().toString();
         //Log.d("feiliang raw_data",feiliangStr);
-        double feiliangDouble=Double.parseDouble(feiliang.getText().toString());
+        //double feiliangDouble=Double.parseDouble(feiliang.getText().toString());
         //Log.d("feiliang int", String.valueOf(feiliangDouble));
 
         Map<String, String> values = new HashMap<>();
@@ -178,9 +178,9 @@ public class MainActivity_page5_setting extends AppCompatActivity {
             // 解析 DBC 文件
             List<DBCParser.Message> messages = DBCParser.parseDBCString(dbcContent);
             //Log.d("DBC Messages", "Total messages parsed: " + messages.size());
-            for (DBCParser.Message message : messages) {
+            //for (DBCParser.Message message : messages) {
                 //Log.d("DBC Message ID", message.id); // 打印所有消息 ID
-            }
+            //}
 
             // 查找特定消息
             currentMessage = messages.stream()
